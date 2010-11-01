@@ -1,0 +1,112 @@
+//global layout
+body
+  font-family: sans-serif
+  background: white
+  color: black
+  padding: 10px
+  text-align: center
+
+@mixin bodyElems
+  width: 800px
+  text-align: left
+  padding: 10px
+  -webkit-box-shadow: 3px 3px 3px #666
+  -moz-box-shadow: 3px 3px 3px #666
+  box-shadow: 3px 3px 3px #666
+  margin-left: auto
+  margin-right: auto
+
+#header
+  @include bodyElems
+  background: #ddf1ff
+  background: -webkit-gradient(linear, 0% 0%, 0% 93%, from(#9AB8FF), to(#9Fb8FF), color-stop(.8,#719fED))
+  background: -moz-linear-gradient(0% 93% 90deg,#9AB8FF, #9Fb8FF, #6193ED 80%)
+  margin-bottom: 0
+  border: 1px solid black
+  border-bottom: 0
+  overflow: auto
+  -moz-border-radius-topleft: 10px
+  -moz-border-radius-topright: 10px
+  border-top-left-radius: 10px
+  border-top-right-radius: 10px
+  h1
+    margin-bottom: 0
+    float: left
+    img
+      vertical-align: text-top
+    .smallText
+      font-size: .2em
+  .nav
+    float: right
+    a
+      color: #333
+
+#main
+  @include bodyElems
+  background: #f7fcff
+  border: 1px solid black
+  border-top: 0
+  -moz-border-radius-bottomleft: 10px
+  -moz-border-radius-bottomright: 10px
+  border-bottom-left-radius: 10px
+  border-bottom-right-radius: 10px
+  #footer
+    padding-top: 40px
+    #copyright
+      text-align: center
+      font-size: .9em
+      color: grey
+
+.contentBlock
+  margin-bottom: 3em
+  
+form
+  @extend .contentBlock
+  border: .18em dotted grey
+  -moz-border-radius: 10px
+  border-radius: 10px
+  padding: 1em
+  label
+    display: block
+
+textarea
+  height: 4em
+
+a
+  color: #1144aa
+
+img
+  border: 0px
+
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+  a
+    text-decoration: none
+
+.smallText
+  font-size: .5em
+
+#flash
+  background: white
+  border: 1px solid gray
+  color: gray
+  font-weight: bold
+  margin-bottom: 2em
+  padding: 5px
+  text-align: center
+  -moz-border-radius: 10px
+  border-radius: 10px
+
+// homepage
+#howDoesItWork
+  overflow: hidden
+  li
+    float: left
+    width: 175px
+  img
+    display: block
+.footNotes
+  @extend .smallText
+  margin-left: 2em
+#new_bless_you
+  width: 22em

@@ -1,0 +1,17 @@
+development:
+  adapter: mysql
+  database: websightr_dev
+  username: websightr
+  password: pass
+
+test:
+  adapter: mysql
+  database: websightr_test
+  username: websightr
+  password: pass
+
+production:
+  adapter: mysql
+  database: websightr_prod
+  username: websightr
+  password: pass
