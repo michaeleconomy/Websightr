@@ -4,8 +4,8 @@
     %title
       WebSightr.com -
       = @title || "social web site creation, envisioning the future of the internet"
-    = stylesheet_link_tag "main", "calendar"
-    = javascript_include_tag :all
+    = stylesheet_link_tag "main", "calendar", :cache => true
+    = javascript_include_tag :all, :cache => true
     = csrf_meta_tag
 %body
   #header
