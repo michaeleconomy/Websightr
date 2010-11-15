@@ -1,0 +1,6 @@
+%h1
+  = link_to_ar @user
+  &gt;
+  sites
+= render :partial => 'site', :collection => @sites
+= will_paginate @sites

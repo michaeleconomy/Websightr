@@ -1,0 +1,25 @@
+%h1
+  = link_to 'sites', sites_path
+  &gt;
+  = @site.to_display_name
+  
+- if @site.url
+  %div
+    = link_to @site.url, @site.url, :rel => 'nofollow'
+%div
+  = @site.tagline
+%div
+  = @site.description
+%div
+  added at
+  = @site.created_at
+  by
+  = link_to_ar @site.creator_user
+- if @site.launched_at
+  %div
+    Site launched:
+    @site.launched_at
+
+= link_to "edit", edit_site_path(@site)
+
+= comments_for @site

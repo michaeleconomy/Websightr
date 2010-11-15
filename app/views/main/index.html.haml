@@ -1,1 +1,25 @@
-= link_to "login with facebook", "/auth/facebook"
+.left50
+  #intro
+    Websightr is a site where you can:
+    %ul
+      %li list your website ideas
+      %li view other people's website ideas
+      %li collaborate with other web technology revolutionaries
+      %li participate in the growth of the cloud
+      %li maximize your strategy
+      %li accelerate the future
+
+  #getStarted
+    Get started
+    - if !signed_in?
+      = link_to image_tag("fb-login-button.png", :alt => 'login with facebook'), "/auth/facebook"
+    - else
+      = link_to 'add a new website idea', new_site_path
+.right50
+  %h2 recent sites
+  = render :partial => 'sites/site', :collection => @sites
+  = link_to 'All', sites_path, :class => 'all'
+
+  %h2 recent comments
+  = render :partial => 'comments/comment', :collection => @comments
+  = link_to 'All', comments_path, :class => 'all'

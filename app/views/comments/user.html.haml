@@ -1,0 +1,6 @@
+%h1
+  = link_to_ar @user
+  &gt;
+  comments
+= render :partial => 'comment', :collection => @comments
+= will_paginate @comments

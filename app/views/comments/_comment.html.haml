@@ -1,0 +1,7 @@
+.comment
+  = link_to_ar comment.user
+  - unless (hide_commentables ||= false)
+    commented on
+    = link_to_ar comment.resource
+  = comment.body
+  = comment.created_at

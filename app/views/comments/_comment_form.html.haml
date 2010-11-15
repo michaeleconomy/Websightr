@@ -1,0 +1,15 @@
+- remote_form_for @comment,
+    :loading => "$$('.commentForm').first().down('img').show();$('comment_submit').hide()",
+    :complete => "$$('.commentForm').first().down('img').hide();$('comment_submit').show()",
+    :success => "$$('.commentForm').first().innerHTML = 'comment added!'",
+    :failure => "alert(request.responseText)",
+    :html => {:class => "commentForm"} do |f|
+  = f.error_messages
+  = f.hidden_field :resource_id
+  = f.hidden_field :resource_type
+  = f.text_area :body
+  = f.submit "comment"
+  = loading(:style => 'display:none')
+  
+  
+  

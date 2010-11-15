@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 %html
   %head
-    %title WebSightr.com - social web site creation, invisioning
-    = stylesheet_link_tag "main"
-    = javascript_include_tag :defaults
+    %title
+      WebSightr.com -
+      = @title || "social web site creation, envisioning the future of the internet"
+    = stylesheet_link_tag "main", "calendar"
+    = javascript_include_tag :all
     = csrf_meta_tag
 %body
   #header
@@ -14,7 +16,16 @@
     .nav
       = link_to_unless_current "Home", "/"
       &middot;
+      = link_to_unless_current "Add a website idea", new_site_path
+      &middot;
       = link_to "Source", "http://github.com/michaeleconomy/websightr"
+      &middot;
+      - if signed_in?
+        hi
+        = link_to_ar current_user
+      - else
+        = link_to image_tag("fb-login-button.png", :alt => 'login with facebook'), "/auth/facebook"
+          
   #main
     - if !flash[:notice].blank?
       #flash

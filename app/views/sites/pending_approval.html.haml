@@ -1,0 +1,15 @@
+%h1 sites pending approval
+
+- @sites.each do |site|
+  .site{:id => "site#{site.id}"}
+    = link_to_ar site
+    = link_to_remote_loading "approve",
+      :url => approve_site_path(site),
+      :method => :post,
+      :success => "$('site#{site.id}').remove()"
+    = link_to_remote_loading "delete",
+      :url => site,
+      :method => :delete,
+      :success => "$('site#{site.id}').remove()"
+    = site.inspect
+= will_paginate @sites

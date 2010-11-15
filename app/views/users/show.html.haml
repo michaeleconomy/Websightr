@@ -1,0 +1,20 @@
+- @title = "#{@user.name}'s profile"
+%h1
+  = link_to "users", users_path
+  &gt;
+  = @user.name
+.left50
+  - unless @sites.empty?
+    %h2
+      sites by
+      = @user.name
+    = render :partial => 'sites/site', :collection => @sites
+    = link_to 'All', sites_user_path(@user), :class => 'all'
+
+.right50
+  - unless @comments.empty?
+    %h2
+      recent comments by
+      = @user.name
+    = render :partial => 'comments/comment', :collection => @sites
+    = link_to 'All', comments_user_path(@user), :class => 'all'
