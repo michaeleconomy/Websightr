@@ -111,8 +111,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 2em; }
 
 .left50, .right50 {
-  width: 50%;
+  width: 380px;
   float: left; }
+
+.left50 {
+  padding-right: 10px; }
 
 a.all {
   text-align: right;

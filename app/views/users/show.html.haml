@@ -16,5 +16,5 @@
     %h2
       recent comments by
       = @user.name
-    = render :partial => 'comments/comment', :collection => @sites
+    = render :partial => 'comments/comment', :collection => @comments
     = link_to 'All', comments_user_path(@user), :class => 'all'
