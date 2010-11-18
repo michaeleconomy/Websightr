@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     unless signed_in?
       respond_to do |format|
         format.html do
-          redirect_to 'auth/facebook'
+          redirect_to '/auth/facebook'
         end
       end
       return false
